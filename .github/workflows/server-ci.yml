@@ -1,0 +1,32 @@
+name: Server CI
+
+on:
+  push:
+    paths:
+      - "server/**"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+
+      - name: Install dependencies
+        run: |
+          cd server
+          npm install
+
+      - name: Build (if exists)
+        run: |
+          cd server
+          npm run build || echo "No build step"
+
+      - name: Docker build check
+        run: docker build -t permitflow-server ./server

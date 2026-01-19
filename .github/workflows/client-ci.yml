@@ -1,0 +1,24 @@
+name: Client CI
+
+on:
+  push:
+    paths:
+      - "client/**"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+
+      - name: Install & Build
+        run: |
+          cd client
+          npm install
+          npm run build
