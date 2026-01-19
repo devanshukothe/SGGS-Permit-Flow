@@ -1,3 +1,6 @@
+![CI](https://github.com/devanshukothe/SGGS-Permit-Flow/actions/workflows/client-ci.yml/badge.svg)
+![CI](https://github.com/devanshukothe/SGGS-Permit-Flow/actions/workflows/server-ci.yml/badge.svg)
+
 📌 What is SGGS Permit Flow?
 SGGS Permit Flow is a centralized web portal designed for students and faculty of SGGS to manage and approve various permission-based processes including:
 
